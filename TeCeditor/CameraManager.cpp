@@ -11,8 +11,6 @@ void CameraManager::update() {
 	//à íu
 	if (Input::MouseM.pressed) {
 		pos += Vec2((double)Mouse::Delta().x / scale, (double)Mouse::Delta().y / scale);
-		Print(L"CameraPos:");
-		Println(pos);
 
 		//ÉYÅ[ÉÄ
 		if (Mouse::Wheel() < 0) {
@@ -22,4 +20,10 @@ void CameraManager::update() {
 			scale -= 0.2;
 		}
 	}
+
+
+	Print(L"CameraPos:");
+	Println(pos);
+	Print(L"Zoom:");
+	Println(scale);
 }
