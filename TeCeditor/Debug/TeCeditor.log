@@ -1,0 +1,13 @@
+﻿cl : コマンド ライン warning D9030: '/Gm' はマルチプロセシングと互換性がありません。/MP スイッチを無視します
+  Object.cpp
+c:\users\iy\desktop\teceditor\object.cpp(83): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\iy\desktop\teceditor\object.cpp(84): warning C4389: '==': signed と unsigned の数値を比較しようとしました。
+c:\users\iy\desktop\teceditor\object.cpp(91): warning C4389: '==': signed と unsigned の数値を比較しようとしました。
+c:\users\iy\desktop\teceditor\object.cpp(142): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  MiddleView.cpp
+  Editor.cpp
+  DistantView.cpp
+  コードを生成中...
+     ライブラリ C:\Users\IY\Desktop\TeCeditor\Debug\TeCeditor.lib とオブジェクト C:\Users\IY\Desktop\TeCeditor\Debug\TeCeditor.exp を作成中
+  TeCeditor.vcxproj -> C:\Users\IY\Desktop\TeCeditor\Debug\TeCeditor.exe
+  TeCeditor.vcxproj -> C:\Users\IY\Desktop\TeCeditor\Debug\TeCeditor.pdb (Full PDB)
