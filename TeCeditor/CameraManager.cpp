@@ -2,16 +2,14 @@
 #include<Siv3D.hpp>
 
 CameraManager::CameraManager() :
-	pos(0.0, 0.0),
+	pos(0, 0),
 	scale(1.0) {
-	pos = Window::Center();
 }
 
 void CameraManager::update() {
-	//位置
 	if (Input::MouseM.pressed) {
-		pos += Vec2((double)Mouse::Delta().x / scale, (double)Mouse::Delta().y / scale);
-
+		//位置
+		pos -= Vec2((double)Mouse::Delta().x, (double)Mouse::Delta().y);
 		//ズーム
 		if (Mouse::Wheel() < 0) {
 			scale += 0.2;
@@ -21,6 +19,20 @@ void CameraManager::update() {
 		}
 	}
 
+	//キー操作
+	const static int speed = 15;
+	if (Input::KeyRight.pressed) {
+		pos.x += speed;
+	}
+	if (Input::KeyLeft.pressed) {
+		pos.x -= speed;
+	}
+	if (Input::KeyUp.pressed) {
+		pos.y -= speed;
+	}
+	if (Input::KeyDown.pressed) {
+		pos.y += speed;
+	}
 
 	Print(L"CameraPos:");
 	Println(pos);

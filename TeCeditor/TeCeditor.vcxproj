@@ -162,12 +162,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="BackGroundManager.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="Object.cpp" />
-    <ClCompile Include="DistantView.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MiddleView.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="Operator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -282,11 +284,13 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackGround.h" />
+    <ClInclude Include="BackGroundManager.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Object.h" />
-    <ClInclude Include="DistantView.h" />
     <ClInclude Include="Editor.h" />
-    <ClInclude Include="MiddleView.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="Operator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

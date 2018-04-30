@@ -1,0 +1,24 @@
+﻿  BackGround.cpp
+  CameraManager.cpp
+  Object.cpp
+  Editor.cpp
+  Main.cpp
+  ObjectManager.cpp
+  Operator.cpp
+c:\users\iy\documents\teceditor\teceditor\Operator.h(9): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています BackGround.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(10): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています BackGround.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(9): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Editor.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(10): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Editor.cpp)
+Object.cpp(63): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\users\iy\documents\teceditor\teceditor\Operator.h(9): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています ObjectManager.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(9): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Main.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(10): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています ObjectManager.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(10): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Main.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(9): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Operator.cpp)
+c:\users\iy\documents\teceditor\teceditor\Operator.h(10): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。 (ソース ファイルをコンパイルしています Operator.cpp)
+     ライブラリ C:\Users\IY\Documents\TeCeditor\TeCeditor\Release\TeCeditor.lib とオブジェクト C:\Users\IY\Documents\TeCeditor\TeCeditor\Release\TeCeditor.exp を作成中
+  コード生成しています。
+  All 877 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  TeCeditor.vcxproj -> C:\Users\IY\Documents\TeCeditor\TeCeditor\Release\TeCeditor.exe
+  TeCeditor.vcxproj -> C:\Users\IY\Documents\TeCeditor\TeCeditor\Release\TeCeditor.pdb (Full PDB)
