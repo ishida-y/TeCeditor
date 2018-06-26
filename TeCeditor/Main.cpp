@@ -14,5 +14,3 @@ void Main()
 		editor.draw();
 	}
 }
-
-//todo:L""

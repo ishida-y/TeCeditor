@@ -6,23 +6,25 @@
 
 class Object {
 public:
-	Object(String _name);
+	Object(String _name, Vec2 _pos, double _rot = 0.0, Vec2 _scale = Vec2(1.0, 1.0), int _alpha = 255);
 	virtual ~Object() {
 	}
-	void draw();		//描画
-	virtual void edit_update(const GUI& gui);	//編集処理
-	void edit_draw();	//編集描画
+	void draw();
+	virtual void edit_update(const GUI& gui);
+	void edit_draw();
 	void singleGui_draw(const GUI& gui);
 	void set_singleGui(GUI& gui);
 	void move_pos(Vec2 delta);
 	bool range_mouseOver();
 	Vec2 get_pos();
+	void write_csv(CSVWriter& writer);
 	bool isDead;	//死亡フラグ
+
 protected:
 	Vec2 pos;		//位置
 	const String name;	//名前
-	RectF range;	//範囲
 	double rot;		//回転角度
 	Vec2 scale;		//拡大縮小
 	int alpha;		//アルファ値
+	RectF range;	//範囲
 };

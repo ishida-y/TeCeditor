@@ -21,17 +21,27 @@ void CameraManager::update() {
 
 	//ƒL[‘€ì
 	const static int speed = 15;
-	if (Input::KeyRight.pressed) {
-		pos.x += speed;
+	if (Input::KeyShift.pressed) {
+		if (Input::KeyUp.clicked) {
+			scale += 0.2;
+		}
+		if (Input::KeyDown.clicked && scale > 0.3) {
+			scale -= 0.2;
+		}
 	}
-	if (Input::KeyLeft.pressed) {
-		pos.x -= speed;
-	}
-	if (Input::KeyUp.pressed) {
-		pos.y -= speed;
-	}
-	if (Input::KeyDown.pressed) {
-		pos.y += speed;
+	else {
+		if (Input::KeyRight.pressed) {
+			pos.x += speed;
+		}
+		if (Input::KeyLeft.pressed) {
+			pos.x -= speed;
+		}
+		if (Input::KeyUp.pressed) {
+			pos.y -= speed;
+		}
+		if (Input::KeyDown.pressed) {
+			pos.y += speed;
+		}
 	}
 
 	Print(L"CameraPos:");

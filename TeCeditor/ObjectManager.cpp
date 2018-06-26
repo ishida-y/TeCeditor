@@ -16,6 +16,23 @@ ObjectManager::ObjectManager(String _type) :
 	TextureAsset::PreloadAll();
 
 	use = names.begin();
+
+	//csvì«Ç›çûÇ›
+	const CSVReader csv(L"sample.csv");
+	if (!csv)
+	{
+		return;
+	}
+	for (int i = 0; i < csv.rows; i++) {
+		if (csv.get<String>(i, 0) == type) {
+			for (int j = 0; j < names.size(); j++) {
+				if (csv.get<String>(i, 1) == names[j]) {
+					objs.emplace_back(std::make_shared<Object>(csv.get<String>(i, 1), csv.get<Vec2>(i, 2), csv.get<double>(i, 3), csv.get<Vec2>(i, 4), csv.get<int>(i, 5)));
+					break;
+				}
+			}
+		}
+	}
 }
 
 void ObjectManager::update() {
@@ -36,7 +53,7 @@ void ObjectManager::update() {
 	//í«â¡
 	if (*use != L"" && Operator::get().getTergetSize() == 0) {
 		if (Input::MouseL.clicked) {
-			objs.emplace_back(std::make_shared<Object>(*use));
+			objs.emplace_back(std::make_shared<Object>(*use, Mouse::Pos()));
 		}
 	}
 
@@ -74,5 +91,14 @@ void ObjectManager::draw(bool select) {
 	if (*use != L"" && Operator::get().getTergetSize() == 0 && select) {
 		Vec2 pos = Mouse::Pos() - TextureAsset(*use).size / 2.0;
 		TextureAsset(*use).draw(pos, Color(255, 255, 255, 128));
+	}
+}
+
+
+void ObjectManager::write_csv(CSVWriter& writer) {
+	for (auto i : objs) {
+		writer.nextLine();
+		writer.write(type);
+		i->write_csv(writer);
 	}
 }

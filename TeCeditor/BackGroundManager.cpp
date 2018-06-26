@@ -29,8 +29,7 @@ BackGroundManager::BackGroundManager(String _type, Vec2 _moveRate) :
 				if (csv.get<String>(i, 1) == names[j]) {
 					use += j;
 					obj.reset();
-					obj = std::make_shared<BackGround>(*use, moveRate, csv.get<Vec2>(i, 2));
-					//todo:‚»‚Ì‘¼ƒpƒ‰ƒ[ƒ^
+					obj = std::make_shared<BackGround>(*use, moveRate, csv.get<Vec2>(i, 2), csv.get<double>(i, 3), csv.get<Vec2>(i, 4), csv.get<int>(i, 5));
 					break;
 				}
 			}
@@ -77,4 +76,11 @@ void BackGroundManager::change_obj() {
 	obj = std::make_shared<BackGround>(*use, moveRate, tmp);
 	Operator::get().clearTarget();
 	show_gui();
+}
+
+
+void BackGroundManager::write_csv(CSVWriter& writer) {
+	writer.nextLine();
+	writer.write(type);
+	obj->write_csv(writer);
 }

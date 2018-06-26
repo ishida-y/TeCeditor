@@ -9,6 +9,7 @@ public:
 	void update();
 	void draw(Vec2 camera);
 	void show_gui();
+	void write_csv(CSVWriter& writer);
 private:
 	String type;
 	Vec2 moveRate;

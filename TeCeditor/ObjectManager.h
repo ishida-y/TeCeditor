@@ -7,6 +7,7 @@ public:
 	ObjectManager(String _type);
 	void update();
 	void draw(bool select);
+	void write_csv(CSVWriter& writer);
 private:
 	String type;
 	std::vector<String>::iterator use;

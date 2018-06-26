@@ -2,45 +2,20 @@
 /*
 TODO:ägëÂèkè¨èàóù
 */
-Object::Object(String _name) :
+Object::Object(String _name, Vec2 _pos, double _rot, Vec2 _scale, int _alpha) :
 	name(_name),
+	pos(_pos),
 	isDead(false),
-	rot(0.0),
-	scale(1.0, 1.0),
-	alpha(255)/*,
-	gui(GUIStyle::Default)*/ {
+	rot(_rot),
+	scale(_scale),
+	alpha(_alpha) {
 
 	//ç¿ïWà íu
-	pos = Mouse::Pos();
 	range = RectF(pos - TextureAsset(name).size, TextureAsset(name).size);
-
-//	//guiê›íË
-//	gui.setPos(1280, 0);
-//	gui.setTitle(name);
-//
-//	gui.addln(L"txt_pos", GUIText::Create(L"", 50));
-//
-//	gui.add(L"txt_rot", GUIText::Create(L"", 50));
-//	gui.addln(L"rot", GUISlider::Create(0.0, 100.0, 0.0, 200));
-//
-//	/*
-//	gui.add(L"txt_scaleX", GUIText::Create(L"", 100));
-//	gui.addln(L"scaleX", GUISlider::Create(0.0, 300.0, 100.0, 200));
-//
-//	gui.add(L"txt_scaleY", GUIText::Create(L"", 100));
-//	gui.addln(L"scaleY", GUISlider::Create(0.0, 300.0, 100.0, 200));
-//*/
-//	gui.add(L"txt_alpha", GUIText::Create(L"", 100));
-//	gui.addln(L"alpha", GUISlider::Create(0.0, 255.0, 255.0, 200));
-//
-//	gui.addln(L"Delete", GUIButton::Create(L"Delete"));
-//
-//	gui.show(false);
 }
 
 void Object::draw() {
 	TextureAsset(name).scale(scale).rotate(rot).draw(pos - TextureAsset(name).size / 2.0, Color(255, 255, 255, alpha));
-	Circle(pos, 10).draw();
 }
 
 void Object::edit_update(const GUI& gui) {
@@ -70,6 +45,9 @@ void Object::edit_update(const GUI& gui) {
 
 void Object::edit_draw() {
 	range.scaled(scale).rotated(rot).drawFrame(5);
+	if (range.area() != 0) {
+		Circle(pos, 5).draw();
+	}
 }
 
 void Object::singleGui_draw(const GUI& gui) {
@@ -98,4 +76,13 @@ bool Object::range_mouseOver() {
 
 Vec2 Object::get_pos() {
 	return pos;
+}
+
+
+void Object::write_csv(CSVWriter& writer) {
+	writer.write(name);
+	writer.write(pos);
+	writer.write(rot);
+	writer.write(scale);
+	writer.write(alpha);
 }

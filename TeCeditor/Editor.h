@@ -10,11 +10,13 @@ public:
 	Editor();
 	void update();
 	void draw();
+	~Editor();
 private:
 	CameraManager camera;
 	BackGroundManager Dview;
 	BackGroundManager Mview;
-	ObjectManager Obj;
+	ObjectManager Obj1;
+	ObjectManager Obj2;
 	GUI gui;
 	bool lookGui;
 };

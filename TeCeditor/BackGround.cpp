@@ -1,15 +1,8 @@
 #include "BackGround.h"
 
-BackGround::BackGround(String _name, Vec2 _moveRate, Vec2 _pos) :
-	Object(_name),
+BackGround::BackGround(String _name, Vec2 _moveRate, Vec2 _pos, double _rot, Vec2 _scale, int _alpha) :
+	Object(_name, _pos, _rot, _scale, _alpha),
 	moveRate(_moveRate) {
-	////gui•\¦İ’è
-	//gui.slider(L"rot").enabled = false;
-	////gui.slider(L"scaleX").enabled = false;
-	////gui.slider(L"scaleY").enabled = false;
-	//gui.slider(L"alpha").enabled = false;
-	//gui.button(L"Delete").enabled = false;
-	pos = _pos;
 	//”ÍˆÍ”»’è‚Í–³‚µ
 	range = RectF(Vec2(0, 0), Vec2(0, 0));
 }
@@ -36,14 +29,10 @@ void BackGround::edit_update(const GUI& gui) {
 	}
 
 	//ˆÚ“®
-	if (Input::MouseL.pressed &&
-		range.scaled(scale).rotated(rot).mouseOver) {
+	if (Input::MouseL.pressed) {
 		pos += Mouse::Delta();
 		range.moveBy(Mouse::Delta());
 	}
-
-	//‰ñ“]
-	//rot = gui.slider(L"rot").value / 100.0 * 2.0 * Math::Pi;
 
 	/*Šg‘å
 	scale.x = (int)(gui.slider(L"scaleX").value / 10.0) / 10.0;

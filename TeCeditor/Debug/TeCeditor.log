@@ -1,5 +1,4 @@
-﻿  Editor.cpp
-c:\users\iy\documents\teceditor\teceditor\operator.h(7): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。
-c:\users\iy\documents\teceditor\teceditor\operator.h(8): warning C4100: 'r': 引数は関数の本体部で 1 度も参照されません。
+﻿  Object.cpp
+c:\users\iy\documents\teceditor\teceditor\object.cpp(43): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
   TeCeditor.vcxproj -> C:\Users\IY\Documents\TeCeditor\TeCeditor\Debug\TeCeditor.exe
   TeCeditor.vcxproj -> C:\Users\IY\Documents\TeCeditor\TeCeditor\Debug\TeCeditor.pdb (Full PDB)
